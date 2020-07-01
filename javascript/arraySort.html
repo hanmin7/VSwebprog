@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/arraySort.html</title>
+</head>
+
+<body>
+    <script>
+        var persons = [];
+        var person1 = {
+            firstName:"Kildong",
+            lastName:"Hong",
+            age: 20
+        }
+        var person2 = {
+            firstName:"Minki",
+            lastName:"Hwang",
+            age: 15
+        }
+        var person3 = {
+            firstName:"Songmi",
+            lastName:"Park",
+            age: 25
+        }
+
+
+        var persons = ['hong', 'park', 'hwang', 'kim'];
+        persons = [20, 12, 1, 100, 10];
+        persons = [person1, person2, person3];
+
+        persons.sort(function(a,b){
+            return a - b;  // -면 오름차순, +면 내림차순 (b - a) 이런식으로 생각해보고 적어주면됨.
+        });
+
+        persons = [person1, person2, person3];
+        persons.sort(function(a,b) {
+            if(a.firstName > b.firstName)
+                return 1;
+            else if(a.firstName < b.firstName)
+                return -1;
+            else
+                return 0;
+
+            // if(a.age > b.age)
+            //     return 1;
+            // else if(a.age < b.age)
+            //     return -1;
+            // else
+            //     return 0;
+            // 
+            // return a.age - b.age;
+        });
+
+        for (person of persons) {
+            // document.write("<p>" + person + "</p>");
+            document.write("<p>" + person.firstName + ", " + person.age + "</p>");
+        }
+    </script>
+</body>
+
+</html>

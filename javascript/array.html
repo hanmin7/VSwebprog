@@ -57,12 +57,12 @@
         var person2 = {
             firstName:"Minki",
             lastName:"Hwang",
-            age: 20
+            age: 15
         }
         var person3 = {
             firstName:"Songmi",
             lastName:"Park",
-            age: 20
+            age: 25
         }
         persons[0] = person1;
         persons.push(person2);
@@ -72,10 +72,42 @@
             console.log(p.firstName, p.lastName, p.age);
         }
         persons.forEach(function(obj, idx,ary) {
-            
+
         });
         
-        
+
+
+
+        // document.write("<table border='1'>");
+        // persons.forEach(function(elm){
+        //     document.write("<tr>");
+        //     document.write("<td>"
+        //         + elm.firstName + "</td><td>"
+        //         + elm.lastName + "</td><td>"
+        //         + elm.age + "</td>");
+        //         document.write("</tr>");
+        //     });
+            
+
+        document.write("<table border='1'>");
+        document.write("<tr>");
+        for(f in person1) {
+            document.write("<th>" + f + "</th>");
+        }
+        document.write("</tr>");
+        persons.forEach(showTable);
+        document.write("</table>")
+
+        function showTable(elm, idx, ary) {
+        // function showTable(elm)
+            document.write("<tr>");
+            document.write("<td>"
+                + elm.firstName + "</td><td>"
+                + elm.lastName + "</td><td>"
+                + elm.age + "</td>");
+            document.write("</tr>");
+        }
+
     </script>
 </body>
 
