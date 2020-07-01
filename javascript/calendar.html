@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/calendar.html</title>
+</head>
+<body>
+    <p id = "cal"> </p>
+    <script>
+        var dayAry = ['일', '월', '화', '수', '목', '금', '토'];
+        var $table = document.createElement('table');
+        var $tr = document.createElement('tr');
+        var $th = document.createElement('th');
+        for(var i=0; i<dayAry.length; i++) {
+            var $th = document.createElement('th');
+            var $text = document.createTextNode(dayAry[i]);
+            $th.appendChild($text);
+            $tr.appendChild($th);
+        }
+        $table.setAttribute('style','background-color: yellow;');
+        $table.appendChild($tr);
+        $tr = document.createElement('tr');
+        emptyTd = 1;
+        for(var i=0; i<emptyTd; i++) {
+            var $td = document.createElement('td');
+            $td.appendChild(document.createTextNode(' '));
+            $tr.appendChild($td);
+        }
+        for(var i=0; i<30; i++) {
+            var $text = document.createTextNode(i + 1);
+            var $td = document.createElement('td');
+            $td.appendChild($text);
+            $tr.appendChild($td);
+            if((i+emptyTd)%7 == 0) {
+                $td.setAttribute('style','background-color: red;');
+            }
+            if((i+emptyTd)%7 == 6) {
+                $td.setAttribute('style','background-color: aqua;');
+                $table.appendChild($tr);
+                $tr = document.createElement('tr');
+            }
+            // if(i%7 == 6) {
+            //     $table.appendChild($tr);
+            //     $tr = document.createElement('tr');
+            // }
+        }
+        $table.appendChild($tr);
+        document.getElementById("cal").appendChild($table);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/string.html</title>
+</head>
+<body>
+    <script>
+        var str = "Hello"; //typeof str -> string
+        var str2 = new String("Hello");
+        console.log(str == str2);
+        console.log(str === str2);
+
+        str = 'Please locate where "locate" occurs!';
+        console.log(str.indexOf('locates',10));
+        console.log(str.search('locates'));
+
+        var result = str.slice(7, 13); //substring, substr
+        document.write('<b>' + result + '</b><br>');
+
+        result = str.substr(7, 13);
+        document.write('<h1>' + result + '</h1>');
+
+        result = str.replace(/locate/g, 'rocate');
+        console.log(result);
+
+    </script>
+</body>
+</html>

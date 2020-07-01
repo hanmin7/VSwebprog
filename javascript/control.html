@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/control.html</title>
+</head>
+<body>
+    <input type="text" id="score" value="80" placeholder="숫자입력" >
+    <br>
+    <button onclick="checkScore()">Click</button>
+    <script>
+        function checkScore() {
+            //Element는 input 태그를 뜻함
+            var score = document.getElementById('score').value;   //getElementById은 id값을 읽어오는게 목적
+            console.log(typeof score);
+            score = parseInt(score);   //console에 string 값으로 되어있어서 int로 형변환해줌
+            var element1 = document.getElementById('show');
+            console.log(element1);
+            if(score>=90) {
+                element1.innerHTML = 'A';
+                element1.setAttribute('style','background-color: aqua');  //p태그 속성지정
+               // document.getElementById('show').innerHTML = 'A';
+               // window.alert('A');
+            } else if(score>=80) {
+                element1.innerHTML = 'B';
+                element1.setAttribute('style','background-color: yellow');
+               // document.getElementById('show').innerHTML = 'B';
+               // window.alert('B');
+            } else if(score>=70) {
+                element1.innerHTML = 'C';
+                element1.setAttribute('style','background-color: blue');
+               // document.getElementById('show').innerHTML = 'C';
+               // widow.alert('C');
+            } else {
+                element1.innerHTML = 'D';
+                element1.setAttribute('style','background-color: green');
+               // document.getElementById('show').innerHTML = 'D';
+               // window.alert('D');
+            }
+        }
+    </script>
+</body>
+</html>
