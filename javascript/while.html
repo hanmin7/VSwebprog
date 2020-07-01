@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 6;
+        if(num)
+            console.log("5보다 크다");
+        else
+            console.log("5보다 작다");
+        
+        while(num) {
+            document.write('num값은 ' + num-- + ' 입니다' + '<br>');
+            if(num < 3)
+                break;
+        }
+
+        document.write('<br>');
+        
+        var i = 2;
+        var j = 1;
+        while(j<=9) {
+            document.write(i+'x'+j+'='+(i*j)+'<br>');
+            j++;
+        }
+    </script>
+</body>
+</html>

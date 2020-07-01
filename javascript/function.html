@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(a,b) {
+            return a + b;
+        }
+
+        var result = sum(10,20);
+        console.log("result : " + result);   //console에 10+20 값 출력됨
+
+        result = sum(10,"world");
+        console.log("result : " + result);   //console에 10+world 값 출력됨
+
+        var fnc = function(a,b) {
+            return a*b;
+        }
+        console.log(fnc(2,3));   //console에 2*6 값 출력됨
+
+        var fnc2 = function() {
+            document.write("hello");
+        }
+
+        fnc2();    //hello를 출력되게 해줌
+        document.write("<br>");
+
+        (function() {
+            document.write("hello, World");    //hello World 출력
+        })();
+
+
+    </script>
+</body>
+</html>

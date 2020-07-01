@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var anyAry = [1,2,3,4, 'hello'];
+        for(var i=0; i<anyAry.length; i++) {
+            console.log(anyAry[i]);   //console에 1,2,3,4, 'hello'가 출력됨
+        }
+
+        var person = {
+            firstName: "Kildong",
+            lastName: "Hong",
+            age: 20,
+            fullName: function() { return this.firstName + this.lastName }
+        }
+
+        console.log(person.firstName, person.lastName); //console에 성 이름 출력
+        console.log(person.fullName()); //console에 풀네임 출력
+
+        var anyAry = [1,2,3,4,'hello',person];
+        for(var i=0; i<anyAry.length; i++) {
+            console.log(anyAry[i]);
+        }
+        console.log(anyAry[5].firstName);
+        
+    </script>
+</body>
+</html>
