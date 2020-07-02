@@ -21,6 +21,8 @@ function mySum() {
     console.log("결과: " + result);
 }
 
+//--------------------------------------------------------
+
 function arraySum(ary) {
     var sum = 0;
     for(ar of ary) {
@@ -35,13 +37,20 @@ function arrayTest() {
     console.log(result);
 }
 
+//-------------------------------------------------------
+
 function funcTest(helloFunc) {
-    var hello = document.getElementById("show").innerHTML;
-    console.log(hello);
-    hello += "World";
-    document.getElementById("show").innerHTML = hello;
+    var hel = document.getElementById("show").innerHTML;
+    console.log(hel);
+    hel += "World";
+    console.log(hel);
+    document.getElementById("show").innerHTML = hel;
 }
 
-function helloFunc() {
+// function helloFunc() {
+var helloFunc = function() {
+    // console.log("helloFunc")
     document.getElementById("show").innerHTML = "Hello";
 }
+
+//--------------------------------------------------------
