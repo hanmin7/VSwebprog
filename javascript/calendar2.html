@@ -20,6 +20,7 @@
         //<table></table>
         $table.setAttribute('border','1');
         var $tr = document.createElement('tr'); // <tr></tr>
+
         // var $th = document.createElement('th');
         for(var i=0; i<dayAry.length; i++) {
             var $th = document.createElement('th');
@@ -43,7 +44,7 @@
             var $td = document.createElement('td');
             $td.appendChild($text); //<td>1</td>
             $tr.appendChild($td); //<tr><td>1</td>...</tr>
-            
+
             if((i+emptyTd)%7 == 0) {
                 $td.setAttribute('style','background-color: red;');
             }

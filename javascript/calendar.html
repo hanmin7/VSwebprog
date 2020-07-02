@@ -15,6 +15,7 @@
         //<table></table>
         $table.setAttribute('border','1');
         var $tr = document.createElement('tr'); // <tr></tr>
+        $tr.setAttribute('style', 'background-color: yellow;');
         // var $th = document.createElement('th');
         for(var i=0; i<dayAry.length; i++) {
             var $th = document.createElement('th');
@@ -22,7 +23,7 @@
             $th.appendChild($text); //<th>일</th> ㄱ
             $tr.appendChild($th); //<tr><th>일</th><th>월</th>...</tr> appendChild:tr(부모)에 th를 자식으로  
         }
-        $table.setAttribute('style','background-color: yellow;');
+        // $table.setAttribute('style','background-color: yellow;');
         $table.appendChild($tr);
         //<table><tr><th>일</th><th>월</th>...</tr></table>
 
