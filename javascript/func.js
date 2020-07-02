@@ -25,7 +25,6 @@
     //앞에 문자열이 들어오면 뒤에 숫자도 문자열로 인식.
     console.log(num);
 
-
     num3 = "15";
     console.log(num2 === num3); //false 나옴.
     console.log(num2 !== num3); //true     => 결국 다르다는거.
