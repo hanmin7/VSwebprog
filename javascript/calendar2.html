@@ -7,9 +7,14 @@
 </head>
 <body>
     <p id = "cal"> </p>
-    <button onclick = "showCalendar()">showCal</button>
+    <button onclick = "showCalendar(2020, 7)">showCal</button>
     <script>
-    function showCalendar() {
+        //6월뿐 아니라 다른 달도 가능하게,,,
+    function showCalendar(year, month) {
+        var today = Date(year, month-1, 1);
+        console.log(today.getDay()); //해당요일 가져옴 그럼 그때부터 시작하게..
+        console.log(new Date(year, month, 0).getDate()); //다음달의 앞날. 즉 그 달의 마지막날을 알 수 있음
+
         var dayAry = ['일', '월', '화', '수', '목', '금', '토'];
         var $table = document.createElement('table');
         //<table></table>
@@ -38,6 +43,7 @@
             var $td = document.createElement('td');
             $td.appendChild($text); //<td>1</td>
             $tr.appendChild($td); //<tr><td>1</td>...</tr>
+            
             if((i+emptyTd)%7 == 0) {
                 $td.setAttribute('style','background-color: red;');
             }
