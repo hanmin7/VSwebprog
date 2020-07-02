@@ -33,7 +33,7 @@
     var sum = 0; 
     for(var i=0; i<10; i++) {
         if(i<5)
-            continue; //5보다 작을 동안은 연산x 지나감.
+            continue; //5보다 작을 동안은 연산x 지나감..
         sum = sum + i;  //sum += i;
     }
     console.log("결과값은 " + sum);
