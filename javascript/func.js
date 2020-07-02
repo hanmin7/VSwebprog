@@ -37,6 +37,7 @@
     }
     console.log("결과값은 " + sum);
 
+    
     var $sum = 10;
     var _sum = 20;
     var sum1 = null;
