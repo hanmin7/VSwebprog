@@ -39,18 +39,32 @@ function arrayTest() {
 
 //-------------------------------------------------------
 
-function funcTest(helloFunc) {
+// function funcTest(helloFunc) {
+//     var hel = document.getElementById("show").innerHTML;
+//     console.log(hel);
+//     hel += "World";
+//     console.log(hel);
+//     document.getElementById("show").innerHTML = hel;
+// }
+
+// var helloFunc = function() {
+//     // console.log("helloFunc")
+//     document.getElementById("show").innerHTML = "Hello";
+// }
+
+//쌤 수정--------------------------------------------------------
+
+function funcTest() {
+    funcTest1(helloFunc1());
+}
+function funcTest1() {
     var hel = document.getElementById("show").innerHTML;
-    console.log(hel);
+    // console.log(hel);
     hel += "World";
-    console.log(hel);
     document.getElementById("show").innerHTML = hel;
 }
-
-// function helloFunc() {
-var helloFunc = function() {
+function helloFunc1() {
     // console.log("helloFunc")
     document.getElementById("show").innerHTML = "Hello";
 }
 
-//--------------------------------------------------------

@@ -17,7 +17,8 @@
     <button onclick="sum(10, 5)">Click</button>
     <button onclick="mySum()">mySumClick</button>
     <button onclick="arrayTest()">arySum</button>
-    <button onclick="funcTest(helloFunc())">funcTest</button>
+    <!-- <button onclick="funcTest(helloFunc())">funcTest</button> -->
+    <button onclick="funcTest()">funcTest</button>
 
     <script>
         // console.log(document.getElementsByClassName("show"));
@@ -26,8 +27,8 @@
         // cols[1].innerHTML = "World";
         
         // document.getElementById("show").innerHTML = "<h1>Hello</h1>";
-
-
+        
+        
         // var num = 10;
         // var num; //undefined
         // document.write(typeof num);
@@ -39,11 +40,34 @@
         // document.write(typeof num);
         // document.write("<br>");
         // num = {
-        //     name:"Hong",
-        //     age: 10
-        // } //object
-        // document.write(typeof num);
-        //js파일에 적어서 script src="func.js" 이렇게 연결해주면 ㅇㅇ
+            //     name:"Hong",
+            //     age: 10
+            // } //object
+            // document.write(typeof num);
+            //js파일에 적어서 script src="func.js" 이렇게 연결해주면 ㅇㅇ
+        
+            
+        console.log(document.getElementsByClassName("show"));
+        var cols = document.getElementsByClassName("show");
+        funcTest();
+        
+
+        //function 안에서랑 밖에서 선언한거랑.. 의미...
+        var x = 10;
+        let y = 10;
+        function getXvalue() {
+            // var x = 20; //var를 써서 선언하면 그 안에서만. x1=20, x2=10(위에밖에선언한값)으로 반환 
+            x = 20; //var를 쓰지않고 그냥 이렇게 쓰면 전체에 영향.
+            let y = 20;
+            console.log('x1 ' + x);
+            console.log('y1 ' + y);
+        }
+        getXvalue();
+        var x = 7;
+        // let y = 5; //let은 중복으로 선언x 오류남. 더 타이트하게 체크하는..
+        console.log('x2 ' + x);
+        console.log('y2 ' + y);
+        
     </script>
 </body>
 </html>
