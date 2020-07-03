@@ -7,13 +7,20 @@
 </head>
 <body>
     <p id = "cal"> </p>
-    <button onclick = "showCalendar(2020, 7)">showCal</button>
+    년도:<input type="text" id="year"><br>
+    월:<input type="text" id="month"><br>
+    <button onclick = "showCalendar()">showCal</button>
     <script>
         //6월뿐 아니라 다른 달도 가능하게,,,
-    function showCalendar(year, month) {
-        var today = Date(year, month-1, 1);
-        console.log(today.getDay()); //해당요일 가져옴 그럼 그때부터 시작하게..
-        console.log(new Date(year, month, 0).getDate()); //다음달의 앞날. 즉 그 달의 마지막날을 알 수 있음
+    function showCalendar() {
+        var year = document.getElementById("year").value;
+        var month = document.getElementById("month").value;
+
+        var today = new Date(year, month-1, 1);
+        var lastDay = new Date(year, month, 0).getDate();
+        var emptyTd = today.getDay(); //해당월의 1일의 요일
+        // console.log(today.getDay()); //해당요일 가져옴 그럼 그때부터 시작하게..
+        // console.log(new Date(year, month, 0).getDate()); //다음달의 앞날. 즉 그 달의 마지막날을 알 수 있음
 
         var dayAry = ['일', '월', '화', '수', '목', '금', '토'];
         var $table = document.createElement('table');
@@ -28,18 +35,17 @@
             $th.appendChild($text); //<th>일</th> ㄱ
             $tr.appendChild($th); //<tr><th>일</th><th>월</th>...</tr> appendChild:tr(부모)에 th를 자식으로  
         }
-        $table.setAttribute('style','background-color: yellow;');
         $table.appendChild($tr);
         //<table><tr><th>일</th><th>월</th>...</tr></table>
 
         $tr = document.createElement('tr'); //<tr></tr>
-        emptyTd = 1; //빈공란만들기위한변수
+        emptyTd = today.getDay(); //빈공란만들기위한변수
         for(var i=0; i<emptyTd; i++) {
             var $td = document.createElement('td');
             $td.appendChild(document.createTextNode(' ')); //6월 처음에 빈공간들어가는거
             $tr.appendChild($td);
         }
-        for(var i=0; i<30; i++) {
+        for(var i=0; i<lastDay; i++) {
             var $text = document.createTextNode(i + 1);
             var $td = document.createElement('td');
             $td.appendChild($text); //<td>1</td>

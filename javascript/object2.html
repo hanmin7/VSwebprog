@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/object2.html</title>
+</head>
+<body>
+    <script>
+        for(var i=0; i<10; i++) {
+            document.write("<p class='col'>" + i + "</p>");
+        }
+
+        var elmtAry = document.getElementsByClassName("col");
+        // console.log(elmtAry);
+        // elmtAry[0].innerHTML = "first";
+
+        var newAry = [];
+        for(var i=0; i<elmtAry.length; i++) {
+            newAry.push(elmtAry[i].innerHTML);
+        }
+
+        // var sliceAry = newAry.splice(5, 2); 5번부터 2개
+        var sliceAry = newAry.splice(5); //5번부터 다 가져옴 5,6,7,8,9
+        // console.log(sliceAry);
+
+        var sliceAry1 = newAry.splice(0,3); //0,1,2
+
+        var totalSlice = sliceAry.concat(sliceAry1);
+
+        // var sum = 0;
+        // totalSlice.forEach(function(a, b, c){
+            //     console.log(a, b);
+            //     // sum += a; //문자로 다 붙여서 나옴 05678012
+            //     sum += parseInt(a); //int로 변환. 그럼 sum한 값으로 나옴. 38
+            // });
+        // document.write(sum);
+            
+        var sum = 0;
+        document.write("<ul>");
+        totalSlice.forEach(callbackFunc);
+        document.write("</ul>");
+        // document.write(sum);
+
+        function callbackFunc(a,b,c) {
+            console.log(a, b);
+            // sum += parseInt(a);
+            document.write("<li> index: "+b + ", value: " + a + "</li>");    
+        };
+        
+        // var callbackFunc = function(a, b, c) {
+        //     console.log(a, b);
+        //     sum += parseInt(a);
+        // };
+
+    </script>
+</body>
+</html>

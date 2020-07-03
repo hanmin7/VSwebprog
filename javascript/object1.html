@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/object1.html</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            name: "Hong",
+            age: 20,
+            height: 170,
+            eat: function () {
+                console.log("eat");
+            }
+        };
+        var person1 = {
+            name: "Hong",
+            age: 20,
+            height: 170,
+            eat: function () {
+                console.log("eat");
+            }
+        };
+        var persons = [person, person1];
+
+        var nm = "name";
+        person.name = "Hwang";
+        //console.log(person["name"]);
+        //console.log(person[nm]);
+        console.log(persons);
+        document.write("<p>" + persons[0].name + "</p>");
+        document.write("<p>" + persons[0].age + "</p>");
+        document.write("<p>" + persons[0]["height"] + "</p>");
+
+        var strAry = [];
+        strAry.push("Hong"); //배열에 추가 : push
+        strAry.push("Hwang");
+        strAry[strAry.length] = "Park";
+        for (var i = 0; i < strAry.length; i++) {
+            document.write("<p>" + strAry[i] + "</p>");
+        }
+        strAry.pop(); //마지막요소 제거
+        delete strAry[1]; //지정인ㄷㄱ스 제거
+        console.log("-----------------")
+        for (var i = 0; i < strAry.length; i++) {
+            console.log(strAry[i]);
+        }
+        strAry.unshift("Kwack"); //앞쪽으로 추가
+        strAry.unshift("Kim")
+        console.log("-----------------")
+        for (var i = 0; i < strAry.length; i++) {
+            console.log(strAry[i]);
+        }
+        strAry.shift(); //앞에서부터 지움
+        console.log("-----------------")
+        for (var i = 0; i < strAry.length; i++) {
+            console.log(strAry[i]);
+        }
+
+    </script>
+</body>
+
+</html>

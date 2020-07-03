@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript/javascript.html</title>
     <!-- <script src="func.js"> </script> -->
-    <script src="func1.js"> </script>
+    <!-- <script src="func1.js"> </script> -->
 </head>
 <body>
+    <p class="show"></p>
+    <p class="show"></p>
     <p id="show"></p>
-    <p class="show"></p>
-    <p class="show"></p>
-
+    
     <!-- func1하면서 추가 -->
     <!-- click해서 sum호출하게 -->
     <button onclick="sum(10, 5)">Click</button>
     <button onclick="mySum()">mySumClick</button>
     <button onclick="arrayTest()">arySum</button>
     <!-- <button onclick="funcTest(helloFunc())">funcTest</button> -->
-    <button onclick="funcTest()">funcTest</button>
+    <!-- <button onclick="funcTest()">funcTest</button> -->
+    <button onclick="func2('hello')">func2Test</button>
 
     <script>
         // console.log(document.getElementsByClassName("show"));
@@ -49,7 +50,7 @@
             
         console.log(document.getElementsByClassName("show"));
         var cols = document.getElementsByClassName("show");
-        funcTest();
+        // funcTest();
         
 
         //function 안에서랑 밖에서 선언한거랑.. 의미...
@@ -69,5 +70,9 @@
         console.log('y2 ' + y);
         
     </script>
+
+
+    <script src="func2.js"> </script>
+
 </body>
 </html>

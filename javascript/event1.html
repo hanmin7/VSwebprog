@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/event1.html</title>
+    <script>
+        function showCurrentTime() {
+            document.getElementById("show").innerHTML = Date();
+        }
+    </script>
+</head>
+
+<body>
+    <p id="show"></p>
+    <button id="btn">Click</button>
+    <script>
+        // document.getElementById("btn").onclick = showCurrentTime;
+
+        // console.log(this);
+        // var btn = document.getElementById("btn");
+        // // showCurrentTime();
+        // btn.onclick = showCurrentTime;
+        // btn.onmouseover = function() {
+        //     btn.setAttribute("style","background-color:yellow");
+        // }
+        // btn.onmouseout = function() {
+        //     btn.setAttribute("style","background-color:null");
+        // }
+
+
+        var jsonData = [{ "id": 1, "first_name": "Audi", "last_name": "Tolputt", "email": "atolputt0@telegraph.co.uk", "gender": "Female", "ip_address": "128.138.253.42" },
+        { "id": 2, "first_name": "Nydia", "last_name": "Bradborne", "email": "nbradborne1@ameblo.jp", "gender": "Female", "ip_address": "226.84.127.96" },
+        { "id": 3, "first_name": "Penni", "last_name": "Moff", "email": "pmoff2@sfgate.com", "gender": "Female", "ip_address": "238.4.204.47" },
+        { "id": 4, "first_name": "Melloney", "last_name": "Latek", "email": "mlatek3@istockphoto.com", "gender": "Female", "ip_address": "152.1.213.39" },
+        { "id": 5, "first_name": "Cleve", "last_name": "Duffer", "email": "cduffer4@phpbb.com", "gender": "Male", "ip_address": "149.31.213.67" },
+        { "id": 6, "first_name": "Annis", "last_name": "Bingley", "email": "abingley5@deviantart.com", "gender": "Female", "ip_address": "99.54.232.182" }]
+
+        console.log(jsonData);
+
+        var titles = ["id", "first_name", "last_name"];
+
+        var $table = document.createElement("table");
+        $table.setAttribute("border", "1");
+        var $tr = document.createElement("tr");
+        for (field of titles) {
+            var $th = document.createElement("th");
+            var $text = document.createTextNode(field.replace("_", "").toUpperCase());
+            $th.appendChild($text);
+            $tr.appendChild($th);
+        }
+        $table.appendChild($tr);
+        jsonData.forEach(function (o, i, a) {
+            var $tr = document.createElement("tr");
+            for (field of titles) {
+                var $td = document.createElement("td");
+                var $text = document.createTextNode(o[field]);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            $td = document.createElement("td");
+            var $button = document.createElement("button");
+            $button.innerHTML = "Click";
+            // $button.onclick = function() {
+            //     // window.alert("click");
+            //     this.parentNode.parentNode.style.background = "yellow";  // this는 그 버튼. button의 상위 td. td의 상위 tr 그 줄 색깔바꾸게 할꺼임
+            // }
+            $button.onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+            }
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+            $button.onclick = function() {
+                this.parentNode.parentNode.remove(); // 그 줄 다 지울꺼임
+            }
+
+            $td.appendChild($button);
+            $tr.appendChild($td);
+            $table.appendChild($tr);
+        });
+        var show = document.getElementById("show");
+
+        show.appendChild($table);
+
+
+    </script>
+</body>
+
+</html>
