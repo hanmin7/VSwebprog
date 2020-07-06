@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node2(remove)</title>
+</head>
+<body id="bdy">
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+        </div>
+        
+        <script>
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p1");
+        // parent.removeChild(child);
+        var ptags = document.querySelectorAll("#div1 > p");
+        console.log(ptags);
+        ptags.forEach(function(a) {
+            parent.removeChild(a);
+            //a.remove();
+        });
+
+        </script>
+</body>
+</html>

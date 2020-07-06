@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+</head>
+
+<body id="bdy">
+    <h2>JavaScript addEventListener()</h2>
+
+    <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        var myBtn = document.getElementById("myBtn");
+
+        // document.getElementById("myBtn").addEventListener("click", displayDate);
+        // document.getElementById("myBtn").onclick="displayDate";
+        myBtn.addEventListener("click", displayDate);
+        myBtn.addEventListener('mouseover',displayBackground);
+        myBtn.onmouseout = function() {
+            myBtn.style.background = null; //"";
+        }
+
+        function displayBackground() {
+            myBtn.style.background = "yellow";
+        }
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+
+
+        // myBtn.addEventListener('mouseout',displayBackground2);
+        // function displayBackground2() {
+        //     myBtn.style.background = "null";
+        // }
+
+    </script>
+
+</body>
+
+</html>

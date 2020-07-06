@@ -9,6 +9,23 @@
         function showCurrentTime() {
             document.getElementById("show").innerHTML = Date();
         }
+
+        // function btnFunc($tr) {
+        //     var $td = document.createElement("td");
+        //     var $button = document.createElement("button");
+        //     $button.innerHTML = "Click";
+        //     $button.onmouseover = function () {
+        //         this.parentNode.parentNode.style.background = "yellow";
+        //     }
+        //     $button.onmouseout = function () {
+        //         this.parentNode.parentNode.style.background = "";
+        //     }
+        //     $button.onclick = function () {
+        //         this.parentNode.parentNode.remove();
+        //     }
+        //     $td.appendChild($button);
+        //     $tr.appendChild($td);
+        // };
     </script>
 </head>
 
@@ -16,9 +33,40 @@
     ID:<input type="text" id="eid">
     F_name:<input type="text" id="efn">
     L_name:<input type="text" id="eln">
-    <button id="btn">Click</button>
+    <button id="btn1">Click</button>
     <p id="show"></p>
     <script>
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function () {
+            console.log("ddd");
+            var inputs = document.getElementsByTagName("input");
+            var $tr = document.createElement('tr');
+            for(var i=0; i<inputs.length; i++) {
+                var $td = document.createElement('td');
+                var $text = document.createTextNode(inputs[i].value);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            $td = document.createElement("td");
+            var $button = document.createElement("button");
+            $button.innerHTML = "Click";
+            $button.setAttribute('class','btnClass'); //루핑돌면서처리(코드더줄이려고) ??
+            $button.onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+            }
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+            $button.onclick = function () {
+                this.parentNode.parentNode.remove();
+            }
+
+            $td.appendChild($button);
+            $tr.appendChild($td);
+
+            $table.appendChild($tr);
+
+        }
 
         var jsonData = [{ "id": 1, "first_name": "Audi", "last_name": "Tolputt", "email": "atolputt0@telegraph.co.uk", "gender": "Female", "ip_address": "128.138.253.42" },
         { "id": 2, "first_name": "Nydia", "last_name": "Bradborne", "email": "nbradborne1@ameblo.jp", "gender": "Female", "ip_address": "226.84.127.96" },
@@ -64,7 +112,7 @@
             $button.onmouseout = function () {
                 this.parentNode.parentNode.style.background = "";
             }
-            $button.onclick = function() {
+            $button.onclick = function () {
                 this.parentNode.parentNode.remove(); // 그 줄 다 지울꺼임
             }
 
@@ -77,21 +125,48 @@
         show.appendChild($table);
 
 
-        var btn = document.getElementById("btn");
-        btn.onclick = function() {
-            var valId = document.getElementById("eid").value
-            var valFn = document.getElementById("efn").value
-            var valLn = document.getElementById("eln").value
+
+        // var btn = document.getElementById("btn");
+        // btn.onclick = function () {
+        //     var valId = document.getElementById("eid").value;
+        //     var valFn = document.getElementById("efn").value;
+        //     var valLn = document.getElementById("eln").value;
+
+        //     var $tr = document.createElement("tr");
+
+        //     var $td = document.createElement("td");
+        //     var $text = document.createTextNode(eid);
+        //     $td.appendChild($text);
+        //     $tr.appendChild($td);
+
+        //     var $td = document.createElement("td");
+        //     var $text = document.createTextNode(efn);
+        //     $td.appendChild($text);
+        //     $tr.appendChild($td);
+
+        //     var $td = document.createElement("td");
+        //     var $text = document.createTextNode(eln);
+        //     $td.appendChild($text);
+        //     $tr.appendChild($td);
+
             
-            var $td = document.createElement("td");
-            var $text = document.createTextNode(valId);
-            var $text = document.createTextNode(valFn);
-            var $text = document.createTextNode(valLn);
-                $td.appendChild($text);
-                $tr.appendChild($td);
-            
-        }
-        
+
+
+        //btnClassFunc  ---------
+        // function btnClassFunc() {
+        //     var btns = document.getElementsByClassName("btnClass");
+        //     for (var i=0; i<btns.length; i++) {
+        //         btns[i].onclick = function() {
+        //             this.parentNode.parentNode.remove();
+        //         }
+        //         btns[i].onmouseover = function() {
+        //             this.parentNode.parentNode.style.background = "yellow";
+        //         }
+        //         btns[i].onmouseout = function() {
+        //             this.parentNode.parentNode.style.background = "";
+        //         }
+        //     }
+        // }
 
     </script>
 </body>

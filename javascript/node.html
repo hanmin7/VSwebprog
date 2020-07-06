@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/node.html</title>
+</head>
+
+<body>
+    <p id="show">
+    <table border="1" id="tbl">
+        <tr>
+            <th>EmpId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Event</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>kildong</td>
+            <td>Hong</td>
+            <td><button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Minki</td>
+            <td>Hwang</td>
+            <td><button>Delete</button></td>
+        </tr>
+    </table>
+    </p>
+    <script>
+        // document.getElementById('tbl')
+        // document.getElementById('tbl').childNodes[1]
+        // //tbody > 자식들 > 그 자식들
+        // document.getElementById('tbl').childNodes[1].childNodes[3]
+
+        var eid = document.getElementById("tbl").childNodes[1].childNodes[2].childNodes[3].childNodes[0];
+        console.log(eid)
+
+        document.getElementById("tbl").childNodes[1].childNodes[2].childNodes[7].childNodes[0].childNodes[0].nodeValue = "save";
+        //변수안담고 위처럼하면 자동으로 버튼에표시되는것도바뀜.
+        // var eid1 = document.getElementById("tbl").childNodes[1].childNodes[2].childNodes[7].childNodes[0].childNodes[0].nodeValue;
+        // console.log(eid1)
+
+    </script>
+
+</body>
+
+</html>
