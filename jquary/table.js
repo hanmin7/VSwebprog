@@ -48,5 +48,6 @@ function mouseoutFunc() {
 }
 
 function btnFunc() {
-    
+//	this.parentNode.parentNode.remove();
+	$(this).parent().parent().remove()
 }
