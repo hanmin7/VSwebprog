@@ -32,7 +32,8 @@ $(document).ready(function() {
         titles.forEach(function(f) {
             $tr.append($('<td />').text(o[f]));
         })
-        $tr.append($('<td />').html('<button>Click</button>'));
+        $tr.append($('<td />').append($('<button />').text('Click').click(btnFunc)));
+        // $tr.append($('<td />').html('<button>Click</button>'));
         $table.append($tr);
     });
     
@@ -44,4 +45,8 @@ function mouseenterFunc() {
 }
 function mouseoutFunc() {
     $(this).css('background','');
+}
+
+function btnFunc() {
+    
 }
