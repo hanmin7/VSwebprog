@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0710basic</title>
+</head>
+<body>
+    <!-- <h1 id="h1">Hello</h1>
+    <h2>Hello</h2>
+    <h3>Hello</h3>
+    <h1 id="h2">Hello</h1> -->
+    <script>
+        // var body_h1 = document.querySelectorAll("body > h1");
+        // // console.log(body_h1);
+        // body_h1.forEach(function(o) {
+        //     // console.log(o);
+        //     o.onclick = function() {
+        //         o.style.background = 'yellow';
+        //     }
+        // });
+
+
+        // // document.querySelectorAll("body > h1")[0].onclick = function() {
+        // //     this.style.background = "yellow";
+        // // }
+        // document.getElementsByTagName('h1')[0].innerHTML = "World";
+
+//----------------------------------------------------------------
+
+        // var sum = 0;
+        // sum += 100;
+        // document.write(sum);
+
+        //구구단
+        // for(var i=1; i<=9; i++) {
+        //     document.write(2 + " * " + i + " = " + (2*i) + "<br>");
+        //     console.log(2 + " * " + i + " = " + (2*i));
+        // }
+
+//-----------------------------------------------------------------
+
+        var strAry = [1,2,3,4,5];
+        // for(var i=0; i<strAry.length; i++) {
+        //     sum += i;    
+        // }
+        //위의 for문을 forEach로 쉽게 쓰는거
+
+        strAry.push(6); //더 추가하는거
+        strAry.push(7);
+        var sum = 0;
+        strAry.forEach(function(o) {
+            sum += o;
+            document.write("배열값" + o + ", 누적값: " + sum + "<br>");
+        });
+        console.log(sum);
+
+//------------------------------------------------------------------
+
+        var person = {
+            name: "Hong",
+            age: 20,
+            address: "Daegu"
+        }
+        console.log(person.name);
+        person.name = "Hwang"; //Hwang로 바꿈
+        console.log(person.name);
+
+        
+        for(p in person) {
+            console.log(p);
+        }
+
+    </script>
+</body>
+</html>

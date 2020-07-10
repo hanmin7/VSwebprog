@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("ul li:first").hide(); //그 li의 첫번째만 지움
+                // $("ul li:first-child").hide(); //각 li들의 첫번째들 다 지움
+                // var lis = document.querySelector("ul").querySelectorAll('li:first-child');
+                // for (var i=0; i<lis.length; i++) {
+                //     lis[i].style.display = "none";
+                // }
+            });
+
+            // $('button').eq(1).hover(function(){ //버튼이 여러개있을 때 인덱스값으로 하나씩 지정해 줄 때
+            // $('button:last').hover(function(){ // 마지막버튼만 지정
+            $('button').hover(function(){
+                $(this).css('background', 'green');
+            }, function(){
+                $(this).css('background', '');
+            }); //모든 버튼에 다 function 지정.
+
+            
+
+
+            $('li').click(function() {
+                $(this).hide();
+            })
+            $('li').mouseenter(function() {
+                $(this).css('background', 'yellow');                
+            })
+            $('li').mouseleave(function() {
+                $(this).css('background', '');                
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <p>List 1:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <p>List 2:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <button>Click me</button>
+    <button>Click me</button>
+</body>
+
+</html>

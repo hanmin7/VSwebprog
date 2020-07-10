@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+<body>
+    <div>
+        <p>홍길동</p>
+        <p class="name">홍길동1</p>
+        <p class="name">홍길동2</p>
+    </div>
+    <p class="name">홍길동3</p>
+    <script>
+        // var ps = document.querySelectorAll('.name'); //name 다 가져옴
+        var ps = document.querySelectorAll('div > .name'); //div 하위에있는 name 가져옴
+        ps.forEach(function(o, i, a) {
+            console.log(o);
+        });
+    </script>
+</body>
+</html>

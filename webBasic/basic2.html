@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webBasic/basic</title>
+</head>
+
+<body>
+
+    <script>
+        var xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function () {
+            if (xhtp.readyState == 4 && xhtp.status == '200') {
+                showXml(this); //xhtp넘겨줌
+                //   showXml(xhtp); //이렇게 적어도ㅇㅇ
+                //   console.log(xhtp.responseXML);
+                //   var datas = xhtp.responseXML;
+                //   var cds = datas.getElementsByTagName('CD');
+                //   for(var i=0; i<cds.length; i++) {
+                //     console.log(cds[i].childNodes[1].childNodes[0].nodeValue)
+                //     document.write(cds[i].childNodes[1].childNodes[0].nodeValue + "<br>");
+                //   }
+            }
+        }
+        xhtp.open("get", "cd_catalog.xml");
+        xhtp.send();
+
+        function showXml(x) {
+            var datas = x.responseXML;
+            var cds = datas.getElementsByTagName('CD');
+            var tags = "<table border='1'>";
+            tags += "<tr><th>Title</th>"
+            for (var i = 0; i < cds.length; i++) {
+                console.log(cds[i].childNodes[1].childNodes[0].nodeValue)
+                document.write(cds[i].childNodes[1].childNodes[0].nodeValue + ", "
+                + cds[i].childNodes[3].childNodes[0].nodeValue + ", "
+                + cds[i].childNodes[5].childNodes[0].nodeValue + "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>
