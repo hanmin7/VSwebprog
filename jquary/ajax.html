@@ -42,9 +42,15 @@
             var $tr = $('<tr />');
             $tr.append($('<th />').text('ID'), $('<th />').text('FName'), $('<th />').text('LName'), $('<th />').text('Gender'), $('<th />').text('Email'));
             $table.append($tr);
-            data.forEach(function(o){
+            data.forEach(function(o,i,a){
                 var $tr = $('<tr />');
+                if (i%2==0) {
+                    $tr.css("background-color", "yellow");
+                }else {
+                    $tr.css("background-color", "blue");
+                }
                 $tr.append($('<td />').text(o.id), $('<td />').text(o.first_name), $('<td />').text(o.last_name), $('<td />').text(o.gender), $('<td />').text(o.email));
+                $tr.append($('<td />').append($('<button />').text('Click').click(btnFunc)));
                 $table.append($tr);
 
             });
@@ -52,6 +58,10 @@
             $('#show').append($table);
 
         }
+
+        function btnFunc() {
+            $(this).parent().parent().remove()
+        };
 
     </script>
 </head>
